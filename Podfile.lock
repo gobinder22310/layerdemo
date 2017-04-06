@@ -1,0 +1,48 @@
+PODS:
+  - Atlas (1.0.32):
+    - LayerKit (>= 0.25.0)
+  - ClusterPrePermissions (0.8.1)
+  - Expecta (1.0.5)
+  - KIF (3.5.1):
+    - KIF/Core (= 3.5.1)
+  - KIF/Core (3.5.1)
+  - KIFViewControllerActions (1.0.2):
+    - KIF (>= 2.0.0)
+  - LayerKit (0.25.2)
+  - LYRCountDownLatch (0.9.0)
+  - OCMock (3.4)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - Atlas
+  - ClusterPrePermissions (~> 0.1)
+  - Expecta
+  - KIF
+  - KIFViewControllerActions (from `https://github.com/blakewatters/KIFViewControllerActions.git`)
+  - LYRCountDownLatch
+  - OCMock
+  - SVProgressHUD
+
+EXTERNAL SOURCES:
+  KIFViewControllerActions:
+    :git: https://github.com/blakewatters/KIFViewControllerActions.git
+
+CHECKOUT OPTIONS:
+  KIFViewControllerActions:
+    :commit: f9bb47771e29adfa0873aff9bc3652587613608e
+    :git: https://github.com/blakewatters/KIFViewControllerActions.git
+
+SPEC CHECKSUMS:
+  Atlas: a4052ee9f8eb0f044b0d03ba21c0300742a8332b
+  ClusterPrePermissions: 168c127a658e423062550dd9c56fe26042a58bce
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
+  KIF: '082eb65279e51c3092923802849eb796a04982ab'
+  KIFViewControllerActions: 923795dc4bd4ca5657841ce7455ce67447693861
+  LayerKit: 1915cfca7355c93a5100f77b11fdefb46dad5a38
+  LYRCountDownLatch: 72a444f729ca5a8c6157c0b58f335a44e6702b48
+  OCMock: 35ae71d6a8fcc1b59434d561d1520b9dd4f15765
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: 958c174a55a3c0c044b8a34debe17382627b81ea
+
+COCOAPODS: 1.2.0

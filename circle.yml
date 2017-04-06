@@ -1,0 +1,17 @@
+machine:
+  xcode:
+    version: "8.2"
+
+dependencies:
+  pre:
+    - gem install bundler
+
+test:
+  override:
+    - bundle exec fastlane test
+
+deployment:
+  internal_distribution:
+    branch: master
+    commands: 
+      - bundle exec fastlane deploy

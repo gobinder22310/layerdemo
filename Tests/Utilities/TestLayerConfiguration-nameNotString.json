@@ -1,0 +1,7 @@
+[
+  {
+    "name": 123,
+    "app_id": "layer:///apps/staging/test",
+    "identity_provider_url" : "https://test.herokuapp.com"
+  }
+]

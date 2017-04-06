@@ -1,0 +1,48 @@
+default_platform :ios
+
+platform :ios do
+  skip_docs
+
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+  
+  desc "Deploys Atlas Messenger to HockeyApp"
+  lane :deploy do
+    configureApp
+    cert
+    sigh
+
+    # Circle CI handles setting the CODE_SIGN_IDENTITY
+    gym(
+      xcargs: {
+        :PROVISIONING_PROFILE => ENV["ATLM_PROVISIONING_PROFILE"]
+      }
+    )
+    hockey(
+      notes: File.read("../CHANGELOG.md")
+    )
+  end
+
+  def configureApp 
+    puts "Configuring Atlas Messenger..."
+    require 'json'
+    configuration = [{
+      :name => ENV["ATLM_APP_NAME"],
+      :app_id => ENV["ATLM_APP_ID"], 
+      :identity_provider_url => ENV["ATLM_IDENTITY_PROVIDER_URL"]
+    }].to_json
+ 
+    puts "Writing configuration to ../LayerConfiguration.json"
+    File.open("../LayerConfiguration.json", "w") do |f|
+      f.write configuration
+    end    
+    puts "Done. Successfully configured Layer Messenger"
+  end
+end
+
